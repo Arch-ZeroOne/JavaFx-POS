@@ -31,6 +31,7 @@ public class LoginLoader extends Application {
          //Adds new icon near the title
          primaryStage.getIcons().add(image_icon);
          primaryStage.setTitle("Log in Form");
+         primaryStage.setResizable(false);
          
          primaryStage.setScene(scene);
          primaryStage.show();

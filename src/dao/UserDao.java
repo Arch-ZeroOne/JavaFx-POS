@@ -4,7 +4,7 @@
  */
 package dao;
 
-import util.Util;
+import util.DatabaseUtil;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -17,7 +17,7 @@ import java.util.Date;
  * @author Windyl
  */
 public class UserDao {
-    private final Util util = new Util();
+    private final DatabaseUtil util = new DatabaseUtil();
     private final Connection connection =  util.getConnection();
     
     
