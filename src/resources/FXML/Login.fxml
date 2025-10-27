@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="457.0" prefWidth="789.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LoginController">
+    <stylesheets>
+        <URL value="@../css/login.css" />
+    </stylesheets>
+   <children>
+      <ImageView fitHeight="32.0" fitWidth="33.0" layoutX="455.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/business.png" />
+         </image>
+      </ImageView>
+      <TextField id="username" fx:id="username" layoutX="495.0" layoutY="157.0" prefHeight="37.0" prefWidth="221.0" promptText="Email">
+         <font>
+            <Font name="Arial" size="13.0" />
+         </font>
+         <effect>
+            <Blend />
+         </effect>
+      </TextField>
+      <PasswordField id="password" fx:id="password" layoutX="495.0" layoutY="212.0" prefHeight="33.0" prefWidth="221.0" promptText="Password">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </PasswordField>
+      <ImageView fitHeight="32.0" fitWidth="26.0" layoutX="458.0" layoutY="212.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/padlock.png" />
+         </image>
+      </ImageView>
+      <Button id="loginbtn" fx:id="loginbtn" layoutX="492.0" layoutY="259.0" mnemonicParsing="false" onAction="#login" prefHeight="32.0" prefWidth="221.0" style="-fx-border-radius: 50;" styleClass="btn" stylesheets="@../css/login.css" text="Login">
+         <font>
+            <Font name="Franklin Gothic Heavy" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </Button>
+      <Label layoutX="546.0" layoutY="106.0" text="Welcome">
+         <font>
+            <Font name="Arial Black" size="24.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutY="-2.0" prefHeight="461.0" prefWidth="425.0" styleClass="left-cover" stylesheets="@../css/login.css">
+         <children>
+            <ImageView fitHeight="147.0" fitWidth="229.0" layoutX="132.0" layoutY="132.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/pos-logo.png" />
+               </image>
+            </ImageView>
+            <Text fx:id="month" layoutX="99.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thursday, January 25">
+               <font>
+                  <Font name="System Bold" size="23.0" />
+               </font>
+            </Text>
+            <Text fx:id="time" layoutX="112.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2:04:52" wrappingWidth="186.231689453125">
+               <font>
+                  <Font name="System Bold" size="50.0" />
+               </font>
+            </Text>
+            <Text fx:id="current" layoutX="310.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PM">
+               <font>
+                  <Font name="System Bold" size="23.0" />
+               </font>
+            </Text>
+            <TableView layoutX="1.0" layoutY="307.0" prefHeight="187.0" prefWidth="425.0">
+              <columns>
+                <TableColumn prefWidth="75.0" text="Product ID" />
+                <TableColumn prefWidth="121.99996185302734" text="Product Name" />
+              </columns>
+            </TableView>
+            <Label layoutX="14.0" layoutY="251.0" text="History">
+               <font>
+                  <Font name="Arial Black" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="290.0" layoutY="279.0" text="Point of Sale System">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="279.0" text="Recently Added Products">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -5,13 +5,16 @@
         <group>
             <file>file:/C:/Users/Windyl/OneDrive/KOWENS/NetBeansProjects/PointOfSale/src/main/PointOfSale.java</file>
             <file>file:/C:/Users/Windyl/OneDrive/KOWENS/NetBeansProjects/PointOfSale/src/auth/Login.java</file>
-            <file>file:/C:/Users/Windyl/OneDrive/KOWENS/NetBeansProjects/PointOfSale/src/resources/FXML/Login/login.css</file>
-            <file>file:/C:/Users/Windyl/OneDrive/KOWENS/NetBeansProjects/PointOfSale/src/resources/FXML/Register/register.css</file>
-            <file>file:/C:/Users/Windyl/OneDrive/KOWENS/NetBeansProjects/PointOfSale/src/resources/FXML/Register/Loader.java</file>
-            <file>file:/C:/Users/Windyl/OneDrive/KOWENS/NetBeansProjects/PointOfSale/src/resources/FXML/Register/UIController.java</file>
-            <file>file:/C:/Users/Windyl/OneDrive/KOWENS/NetBeansProjects/PointOfSale/src/resources/FXML/Register/UI.fxml</file>
+            <file>file:/C:/Users/Windyl/OneDrive/KOWENS/NetBeansProjects/PointOfSale/src/resources/css/register.css</file>
+            <file>file:/C:/Users/Windyl/OneDrive/KOWENS/NetBeansProjects/PointOfSale/src/views/RegisterLoader.java</file>
+            <file>file:/C:/Users/Windyl/OneDrive/KOWENS/NetBeansProjects/PointOfSale/src/controllers/RegisterController.java</file>
             <file>file:/C:/Users/Windyl/OneDrive/KOWENS/NetBeansProjects/PointOfSale/src/util/Util.java</file>
             <file>file:/C:/Users/Windyl/OneDrive/KOWENS/NetBeansProjects/PointOfSale/src/dao/UserDao.java</file>
+            <file>file:/C:/Users/Windyl/OneDrive/KOWENS/NetBeansProjects/PointOfSale/src/controllers/LoginController.java</file>
+            <file>file:/C:/Users/Windyl/OneDrive/KOWENS/NetBeansProjects/PointOfSale/src/resources/css/login.css</file>
+            <file>file:/C:/Users/Windyl/OneDrive/KOWENS/NetBeansProjects/PointOfSale/src/views/LoginLoader.java</file>
+            <file>file:/C:/Users/Windyl/OneDrive/KOWENS/NetBeansProjects/PointOfSale/src/resources/fxml/Login.fxml</file>
+            <file>file:/C:/Users/Windyl/OneDrive/KOWENS/NetBeansProjects/PointOfSale/src/resources/fxml/Register.fxml</file>
         </group>
     </open-files>
 </project-private>

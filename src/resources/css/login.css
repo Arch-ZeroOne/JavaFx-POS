@@ -9,3 +9,9 @@
 .header{
     -fx-background-color: "#1D4E89";
 }
+.btn{
+    -fx-border-radius:"50px";
+}
+.left-cover{
+    -fx-background-color: "#739E82";
+}
