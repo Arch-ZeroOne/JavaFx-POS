@@ -26,6 +26,7 @@ public class Main extends Application {
      public void start(Stage primaryStage) throws IOException{
          Parent parent = FXMLLoader.load(getClass().getResource("../resources/fxml/Login.fxml"));
          Scene scene = new Scene(parent);
+         //Sets the main scene icon
          Image image_icon = new Image(getClass().getResourceAsStream("../resources/img/pos.png"));
          
          //Adds new icon near the title

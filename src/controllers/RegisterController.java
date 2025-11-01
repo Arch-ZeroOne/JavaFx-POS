@@ -19,13 +19,8 @@ import dao.UserDao;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import java.io.IOException;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.stage.Stage;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.scene.control.Hyperlink;
-
+import util.ViewsUtil;
 /**
  * FXML Controller class
  *
@@ -45,6 +40,7 @@ public class RegisterController implements Initializable {
     private final UserDao user_dao = new UserDao();
     Alert alert = new Alert(AlertType.INFORMATION);
     Alert error_alert = new Alert(AlertType.ERROR);
+    ViewsUtil view_util = new ViewsUtil();
    
     /**
      * Initializes the controller class.
@@ -91,19 +87,10 @@ public class RegisterController implements Initializable {
     }
 
     public void goToLogin(ActionEvent event) throws IOException{
+        view_util.transferWindow("Login.fxml", event);
         
-        //gets the current stage 
-        Stage current_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        //get the fxml file to transfer to
-        Parent root = FXMLLoader.load(getClass().getResource("../resources/fxml/Login.fxml"));
-        
-        //switches to the new scene
-        Scene new_scene = new Scene(root);
-        current_stage.setScene(new_scene);
-        
-        current_stage.show();
-        
-        
+      
+     
     }    
     
 }

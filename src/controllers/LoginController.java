@@ -23,11 +23,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.scene.control.Hyperlink;
+import util.ViewsUtil;
 /**
  * FXML Controller class
  *
@@ -58,6 +58,7 @@ public class LoginController implements Initializable {
     DateTimeFormatter format = DateTimeFormatter.ofPattern("E, MMM dd yyyy");
     String formatted_date = date.format(format);
     LocalTime current_time = LocalTime.now();
+    ViewsUtil view_util = new ViewsUtil();
 
     
    
@@ -67,13 +68,9 @@ public class LoginController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-    
     month.setText(formatted_date);
     time.setText(String.valueOf(current_time.getHour()+":"+current_time.getMinute()+":"+current_time.getSecond()));
     current.setText(getCurrentDayTime(current_time));
-    
-    //Test prints
-    System.out.println(current_time);
     
    
          
@@ -137,17 +134,9 @@ public class LoginController implements Initializable {
     
     
     public void goToRegister(ActionEvent event) throws IOException{
-        
-        //gets the current stage 
-        Stage current_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        //get the fxml file to transfer to
-        Parent root = FXMLLoader.load(getClass().getResource("../resources/fxml/Register.fxml"));
-        
-        //switches to the new scene
-        Scene new_scene = new Scene(root);
-        current_stage.setScene(new_scene);
-        
-        current_stage.show();
+             
+        view_util.transferWindow("Register.fxml", event);
+   
         
         
     }
@@ -155,16 +144,7 @@ public class LoginController implements Initializable {
      
     public void goToDashboard(ActionEvent event) throws IOException{
         
-        //gets the current stage 
-        Stage current_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        //get the fxml file to transfer to
-        Parent root = FXMLLoader.load(getClass().getResource("../resources/fxml/Dashboard.fxml"));
-        
-        //switches to the new scene
-        Scene new_scene = new Scene(root);
-        current_stage.setScene(new_scene);
-        
-        current_stage.show();
+        view_util.transferWindow("Dashboard.fxml", event);
         
         
     }
