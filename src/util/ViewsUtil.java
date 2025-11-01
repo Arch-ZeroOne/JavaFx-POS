@@ -9,5 +9,14 @@ package util;
  * @author Windyl
  */
 public class ViewsUtil {
+     public final String LOGIN_WINDOW = "../resources/fxml/Login.FXML";
+     
+     
+     
+     public void transferWindow(String window){
+         
+         
+     }
+
     
 }

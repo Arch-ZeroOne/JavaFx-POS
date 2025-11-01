@@ -15,7 +15,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="581.0" prefWidth="798.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LoginController">
+<AnchorPane id="AnchorPane" prefHeight="581.0" prefWidth="798.0" styleClass="anchor-pane" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LoginController">
     <stylesheets>
         <URL value="@../css/login.css" />
     </stylesheets>
@@ -105,7 +105,7 @@
             <Font size="13.0" />
          </font>
       </Label>
-      <Hyperlink layoutX="664.0" layoutY="316.0" text="Register">
+      <Hyperlink fx:id="gotoregister" layoutX="664.0" layoutY="316.0" onAction="#goToRegister" text="Register">
          <font>
             <Font size="13.0" />
          </font>

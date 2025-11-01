@@ -12,14 +12,22 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import java.sql.SQLException;
 import dao.UserDao;
+import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.scene.control.Hyperlink;
 /**
  * FXML Controller class
  *
@@ -36,6 +44,10 @@ public class LoginController implements Initializable {
     Text time;
     @FXML
     Text current;
+    @FXML
+    Hyperlink gotoregister;
+    @FXML
+
             
     
     UserDao dao = new UserDao();
@@ -67,7 +79,7 @@ public class LoginController implements Initializable {
          
     }
 
-    public void login() throws SQLException{
+    public void login(ActionEvent event) throws SQLException, IOException{
         String user_name = username.getText();
         String pass_word = password.getText();
         
@@ -81,6 +93,12 @@ public class LoginController implements Initializable {
             
             
             success_alert.showAndWait();
+            
+            goToDashboard(event);
+            
+            
+  
+           
             
         }else{
               //Sets the alert icon
@@ -115,6 +133,45 @@ public class LoginController implements Initializable {
     
        return null;
     }
+    
+    
+    
+    public void goToRegister(ActionEvent event) throws IOException{
+        
+        //gets the current stage 
+        Stage current_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        //get the fxml file to transfer to
+        Parent root = FXMLLoader.load(getClass().getResource("../resources/fxml/Register.fxml"));
+        
+        //switches to the new scene
+        Scene new_scene = new Scene(root);
+        current_stage.setScene(new_scene);
+        
+        current_stage.show();
+        
+        
+    }
+    
+     
+    public void goToDashboard(ActionEvent event) throws IOException{
+        
+        //gets the current stage 
+        Stage current_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        //get the fxml file to transfer to
+        Parent root = FXMLLoader.load(getClass().getResource("../resources/fxml/Dashboard.fxml"));
+        
+        //switches to the new scene
+        Scene new_scene = new Scene(root);
+        current_stage.setScene(new_scene);
+        
+        current_stage.show();
+        
+        
+    }
+    
+    
+    
+    
     
 }
 

@@ -5,6 +5,9 @@
 .mainFxmlClass {
 
 }
+.anchor-pane{
+    -fx-background-color : "#FBF7F4";
+}
 
 .registration-left{
     -fx-background-color:"#739E82";

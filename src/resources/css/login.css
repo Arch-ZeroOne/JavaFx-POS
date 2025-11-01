@@ -6,6 +6,12 @@
 
 }
 
+
+
+.anchor-pane{
+    -fx-background-color : "#FBF7F4";
+}
+
 .btn{
     -fx-border-radius:"50px";
 }

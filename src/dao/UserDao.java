@@ -11,19 +11,23 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Date;
 
-
-/**
- *
- * @author Windyl
- */
 public class UserDao {
     private final DatabaseUtil util = new DatabaseUtil();
     private final Connection connection =  util.getConnection();
+    
+    //Constants for error message
+       
     
     
     public boolean registerUser(String email, String password, String role) throws SQLException{
         String query = "INSERT INTO user (email, password, role, createdAt) VALUES (?,?,?,?)";
         PreparedStatement statement = connection.prepareStatement(query);
+        
+        if(isTaken(email)){
+            return false;
+           
+            
+        }
        
         Date now = new Date();
         java.sql.Date sql_date = new java.sql.Date(now.getTime());
@@ -60,9 +64,7 @@ public class UserDao {
          
          if(result.next()){
       
-            
-             
-             
+           
              return true;
              
              
@@ -70,9 +72,29 @@ public class UserDao {
          
          
         
+        return false;
+       
+        
+        
+    }
+    
+    
+    public boolean isTaken(String email ) throws SQLException{
+         String query = "SELECT 1 FROM user WHERE email = ?";
+         PreparedStatement statement = connection.prepareStatement(query);
+         statement.setString(1, email);
+         ResultSet result = statement.executeQuery();
+         
+         
+         if(result.next()){
+      
+             return true;
+             
+             
+         }
+         
         
         return false;
-        
         
     }
     
