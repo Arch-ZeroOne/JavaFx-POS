@@ -24,6 +24,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.scene.control.Hyperlink;
 import util.AlertUtil;
+import util.DateUtil;
 import util.ViewsUtil;
 /**
  * FXML Controller class
@@ -44,17 +45,15 @@ public class LoginController implements Initializable {
     @FXML
     Hyperlink gotoregister;
     @FXML
+            
+                
+    ViewsUtil view_util = new ViewsUtil();
+    AlertUtil alert_util = new AlertUtil();
+    DateUtil date_util = new DateUtil();
 
          
     UserDao dao = new UserDao();
     
-    LocalDate date = LocalDate.now();
-    DateTimeFormatter format = DateTimeFormatter.ofPattern("E, MMM dd yyyy");
-    String formatted_date = date.format(format);
-    LocalTime current_time = LocalTime.now();
-    
-    ViewsUtil view_util = new ViewsUtil();
-    AlertUtil alert_util = new AlertUtil();
 
     
    
@@ -64,11 +63,11 @@ public class LoginController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-    month.setText(formatted_date);
-    time.setText(String.valueOf(current_time.getHour()+":"+current_time.getMinute()+":"+current_time.getSecond()));
-    current.setText(getCurrentDayTime(current_time));
-    
-   
+        
+    month.setText(date_util.getFormattedDate());
+    time.setText(date_util.getCurrentTime());
+    current.setText(date_util.getCurrentDayTime(LocalTime.MIN));
+       
          
     }
 
@@ -91,22 +90,7 @@ public class LoginController implements Initializable {
     }
     
     
-    public String getCurrentDayTime(LocalTime time){
-      
-      String[] split_time = String.valueOf(time).split(":");
-      int current_time = Integer.parseInt(split_time[0]);
-        
 
-    if(current_time > 13 && current_time < 24){
-        return "PM";
-        
-    }else if(current_time > 1 && current_time < 12){
-        return "AM";
-    }
-    
-       return null;
-    }
-    
     
     public void goToRegister(ActionEvent event) throws IOException{
              
